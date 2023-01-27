@@ -1,0 +1,100 @@
+{
+  "generalEngineConfiguration": {
+    "errorIfProvenanceFails": false,
+    "createProvenance":  false
+  },
+  "resourceTypes": {
+    "AllergyIntolerance": [
+      {
+        "url": "http://fhir.smart4health.eu/StructureDefinition/s4h-allergyintolerance"
+      }
+    ],
+    "Device": [],
+    "DocumentReference": [
+      {
+        "url": "http://fhir.smart4health.eu/StructureDefinition/s4h-documentreference"
+      }
+    ],
+    "Condition": [
+      {
+        "url": "http://fhir.smart4health.eu/StructureDefinition/s4h-condition"
+      }
+    ],
+    "Encounter": [
+      {
+        "url": "http://fhir.smart4health.eu/StructureDefinition/s4h-encounter"
+      }
+    ],
+    "Medication": [
+      {
+        "url": "http://hl7.org/fhir/uv/ips/StructureDefinition/Medication-uv-ips"
+      }
+    ],
+    "MedicationStatement": [
+      {
+        "url": "http://fhir.smart4health.eu/StructureDefinition/s4h-medicationstatement"
+      }
+    ],
+    "Observation": [
+      {
+        "url": "http://fhir.smart4health.eu/StructureDefinition/s4h-observation-base"
+      },
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/bodyweight",
+        "triggerCoding": {
+          "code": "29463-7",
+          "system": "http://loinc.org"
+        }
+      },
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/bodyheight",
+        "triggerCoding": {
+          "code": "8302-2",
+          "system": "http://loinc.org"
+        }
+      }
+    ],
+    "Organization": [
+      {
+        "url": "http://hl7.org/fhir/uv/ips/StructureDefinition/Organization-uv-ips"
+      }
+    ],
+    "Patient": [
+      {
+        "url": "http://fhir.smart4health.eu/StructureDefinition/s4h-patient"
+      }
+    ],
+    "Practitioner": [
+      {
+        "url": "http://hl7.org/fhir/uv/ips/StructureDefinition/Practitioner-uv-ips"
+      }
+    ],
+    "PractitionerRole": [
+      {
+        "url": "http://hl7.org/fhir/uv/ips/StructureDefinition/PractitionerRole-uv-ips"
+      }
+    ],
+    "Provenance": [
+      {
+        "url": "http://fhir.smart4health.eu/StructureDefinition/s4h-provenance"
+      }
+    ],
+    "QuestionnaireResponse": [
+      {
+        "url": "http://fhir.smart4health.eu/Questionnaire/pre-session-questionnaire|1.0.0"
+      },
+      {
+        "url": "http://fhir.smart4health.eu/Questionnaire/post-session-questionnaire|1.0.0"
+      },
+      {
+        "url": "http://fhir.smart4health.eu/Questionnaire/pre-training-questionnaire|1.0.0"
+      },
+      {
+        "url": "http://fhir.smart4health.eu/Questionnaire/post-training-questionnaire|1.0.0"
+      },
+      {
+        "url": "http://fhir.smart4health.eu/Questionnaire/back-pain-prevention|1.0.0"
+      }
+    ]
+  }
+}

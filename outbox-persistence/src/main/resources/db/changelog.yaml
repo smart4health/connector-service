@@ -1,0 +1,50 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: Healthmetrix GmbH
+      comment: Sets up the table for CaseEntity
+      changes:
+        - sqlFile:
+            path: db/sql/01-create-cases.sql
+  - changeSet:
+      id: 2
+      author: Healthmetrix GmbH
+      comment: Sets up the table for OauthState
+      changes:
+        - sqlFile:
+            path: db/sql/02-create-oauth-states.sql
+  - changeSet:
+      id: 3
+      author: Healthmetrix GmbH
+      comment: Sets up the cache for refresh tokens and common keys
+      changes:
+        - sqlFile:
+            path: db/sql/03-create-refresh-tokens.sql
+  - changeSet:
+      id: 4
+      author: Healthmetrix GmbH
+      comment: Sets up the table for case nonces
+      changes:
+        - sqlFile:
+            path: db/sql/04-create-case-nonces.sql
+  - changeSet:
+      id: 5
+      author: Healthmetrix GmbH
+      comment: Adds column lang to cases table with default value for existing data
+      changes:
+        - sqlFile:
+            path: db/sql/05-add-column-lang-to-cases-table.sql
+  - changeSet:
+      id: 6
+      author: Healthmetrix GmbH
+      comment: Changes all the langs to be hyphenated in line with the IETF Bcp 47 language tag format
+      changes:
+        - sqlFile:
+            path: db/sql/06-change-langs-to-ietf-bcp-47-format.sql
+  - changeSet:
+      id: 7
+      author: Healthmetrix GmbH
+      comment: Renames column refresh_token on table refresh_tokens to encrypted_refresh_token
+      changes:
+        - sqlFile:
+            path: db/sql/07-add-encryption-for-refresh-tokens.sql

@@ -1,0 +1,102 @@
+[versions]
+org-springframework = "5.3.25"
+org-springframework-boot = "2.7.8"
+kotlin = "1.8.0"
+jackson = "2.14.1"
+springdoc = "1.6.14"
+junit = "5.9.2"
+# Spring Boot 2.x.x does not yet support SLF4J 2.0.0 as spring-boot-starter-logging requires StaticLoggerBinder: https://github.com/spring-projects/spring-boot/issues/12649
+slf4j = "1.7.36"
+hapi = "6.2.5"
+
+[libraries]
+ca-uhn-hapi-fhir-hapi-fhir-base = { module = "ca.uhn.hapi.fhir:hapi-fhir-base", version.ref = "hapi" }
+ca-uhn-hapi-fhir-hapi-fhir-structures-r4 = { module = "ca.uhn.hapi.fhir:hapi-fhir-structures-r4", version.ref = "hapi" }
+ca-uhn-hapi-fhir-hapi-fhir-validation = { module = "ca.uhn.hapi.fhir:hapi-fhir-validation", version.ref = "hapi" }
+ca-uhn-hapi-fhir-hapi-fhir-validation-resources-r4 = { module = "ca.uhn.hapi.fhir:hapi-fhir-validation-resources-r4", version.ref = "hapi" }
+ca-uhn-hapi-fhir-org-hl7-fhir-utilities = "ca.uhn.hapi.fhir:org.hl7.fhir.utilities:5.6.92"
+
+care-data4life-hc-fhir-sdk-java-fhir-java = "care.data4life.hc-fhir-sdk-java:fhir-java:1.9.0"
+care-data4life-hc-result-sdk-kmp-error = "care.data4life.hc-result-sdk-kmp:error:0.3.0"
+care-data4life-hc-sdk-kmp-sdk-core = "care.data4life.hc-sdk-kmp:sdk-core:1.17.2"
+care-data4life-hc-sdk-kmp-sdk-ingestion = "care.data4life.hc-sdk-kmp:sdk-ingestion:1.17.2"
+care-data4life-hc-util-sdk-kmp-util = "care.data4life.hc-util-sdk-kmp:util:1.14.0"
+
+com-amazonaws-aws-java-sdk-ec2 = "com.amazonaws:aws-java-sdk-ec2:1.12.394"
+com-amazonaws-secretsmanager-aws-secretsmanager-caching-java = "com.amazonaws.secretsmanager:aws-secretsmanager-caching-java:1.0.2"
+
+com-fasterxml-jackson-core-jackson-annotations = { module = "com.fasterxml.jackson.core:jackson-annotations", version.ref = "jackson" }
+com-fasterxml-jackson-dataformat-jackson-dataformat-xml = { module = "com.fasterxml.jackson.dataformat:jackson-dataformat-xml", version.ref = "jackson" }
+com-fasterxml-jackson-module-jackson-module-jaxb-annotations = { module = "com.fasterxml.jackson.module:jackson-module-jaxb-annotations", version.ref = "jackson" }
+com-fasterxml-jackson-module-jackson-module-kotlin = { module = "com.fasterxml.jackson.module:jackson-module-kotlin", version.ref = "jackson" }
+
+com-googlecode-libphonenumber = "com.googlecode.libphonenumber:libphonenumber:8.13.5"
+com-h2database-h2 = "com.h2database:h2:2.1.214"
+com-mailjet-mailjet-client = "com.mailjet:mailjet-client:5.2.1"
+com-michael-bull-kotlin-result = "com.michael-bull.kotlin-result:kotlin-result:1.1.16"
+com-nhaarman-mockitokotlin2-mockito-kotlin = "com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0"
+com-nimbusds-nimbus-jose-jwt = "com.nimbusds:nimbus-jose-jwt:9.29"
+io-mockk = "io.mockk:mockk:1.13.3"
+io-projectreactor-netty-reactor-netty = "io.projectreactor.netty:reactor-netty:1.1.2"
+
+org-springdoc-springdoc-openapi-kotlin = { module = "org.springdoc:springdoc-openapi-kotlin", version.ref = "springdoc" }
+org-springdoc-springdoc-openapi-ui = { module = "org.springdoc:springdoc-openapi-ui", version.ref = "springdoc" }
+
+jakarta-xml-bind-jakarta-xml-bind-api = "jakarta.xml.bind:jakarta.xml.bind-api:4.0.0"
+javax-xml-bind-jaxb-api = "javax.xml.bind:jaxb-api:2.3.1"
+net-logstash-logback-logstash-logback-encoder = "net.logstash.logback:logstash-logback-encoder:7.2"
+org-assertj-assertj-core = "org.assertj:assertj-core:3.24.2"
+org-bouncycastle-bcprov-jdk15on = "org.bouncycastle:bcprov-jdk15on:1.70"
+
+org-jetbrains-kotlin-kotlin-jvm-gradle-plugin = { module = "org.jetbrains.kotlin.jvm:org.jetbrains.kotlin.jvm.gradle.plugin", version.ref = "kotlin" }
+org-jetbrains-kotlin-kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
+org-jetbrains-kotlin-kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
+
+org-jetbrains-kotlinx-kotlinx-coroutines-core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4"
+org-jetbrains-kotlinx-kotlinx-coroutines-reactor = "org.jetbrains.kotlinx:kotlinx-coroutines-reactor:1.6.4"
+
+org-jetbrains-kotlinx-kotlinx-serialization-json = "org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1"
+
+org-json = "org.json:json:20220924"
+
+org-junit-jupiter-junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit" }
+org-junit-jupiter-junit-jupiter-params = { module = "org.junit.jupiter:junit-jupiter-params", version.ref = "junit" }
+
+org-liquibase-liquibase-core = "org.liquibase:liquibase-core:4.19.0"
+org-postgresql = "org.postgresql:postgresql:42.5.1"
+
+org-slf4j-slf4j-api = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
+org-slf4j-slf4j-simple = { module = "org.slf4j:slf4j-simple", version.ref = "slf4j" }
+
+org-springframework-boot-spring-boot-starter = { module = "org.springframework.boot:spring-boot-starter", version.ref = "org-springframework-boot" }
+org-springframework-boot-spring-boot-starter-actuator = { module = "org.springframework.boot:spring-boot-starter-actuator", version.ref = "org-springframework-boot" }
+org-springframework-boot-spring-boot-starter-data-jpa = { module = "org.springframework.boot:spring-boot-starter-data-jpa", version.ref = "org-springframework-boot" }
+org-springframework-boot-spring-boot-starter-test = { module = "org.springframework.boot:spring-boot-starter-test", version.ref = "org-springframework-boot" }
+org-springframework-boot-spring-boot-starter-thymeleaf = { module = "org.springframework.boot:spring-boot-starter-thymeleaf", version.ref = "org-springframework-boot" }
+org-springframework-boot-spring-boot-starter-web = { module = "org.springframework.boot:spring-boot-starter-web", version.ref = "org-springframework-boot" }
+
+org-springframework-spring-context = { module = "org.springframework:spring-context", version.ref = "org-springframework" }
+org-springframework-spring-web = { module = "org.springframework:spring-web", version.ref = "org-springframework" }
+org-springframework-spring-webflux = { module = "org.springframework:spring-webflux", version.ref = "org-springframework" }
+
+org-threeten-threetenbp = "org.threeten:threetenbp:1.6.5"
+
+[bundles]
+testing-base = [
+    "org-junit-jupiter-junit-jupiter",
+    "org-junit-jupiter-junit-jupiter-params",
+    "org-assertj-assertj-core",
+    "com-nhaarman-mockitokotlin2-mockito-kotlin"
+]
+
+[plugins]
+com-github-ben-manes-versions = "com.github.ben-manes.versions:0.44.0"
+
+org-jetbrains-kotlin-plugin-allopen = { id = "org.jetbrains.kotlin.plugin.allopen", version.ref = "kotlin" }
+org-jetbrains-kotlin-plugin-jpa = { id = "org.jetbrains.kotlin.plugin.jpa", version.ref = "kotlin" }
+org-jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+org-jetbrains-kotlin-plugin-noarg = { id = "org.jetbrains.kotlin.plugin.noarg", version.ref = "kotlin" }
+org-jetbrains-kotlin-plugin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+org-jetbrains-kotlin-plugin-spring = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "kotlin" }
+
+org-springframework-boot = { id = "org.springframework.boot", version.ref = "org-springframework-boot" }

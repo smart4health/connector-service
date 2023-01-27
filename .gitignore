@@ -1,0 +1,45 @@
+# Project specific
+local/
+
+# Compiled class file
+*.class
+
+# archives
+*.jar
+*.war
+*.zip
+*.tar
+*.tar.gz
+!test/charitepostgres.tar.gz
+
+# Gradle
+.gradle/
+build/*
+**/build
+!gradle/wrapper/gradle-wrapper.jar
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Eclipse
+.settings/
+.project
+.classpath
+
+# VsCode
+.vscode/
+
+# IDEA/Android Studio
+*.iml
+.idea/
+out/
+
+# Mac
+.DS_Store
+
+# Secrets
+*-secret.properties
+*-secret.yaml
+
+/secrets.properties
+.ssh/

@@ -1,0 +1,34 @@
+{
+  "resourceType": "ValueSet",
+  "language": "en",
+  "version": "0.0.1",
+  "url": "http://fhir.smart4health.eu/ValueSet/yesno",
+  "id": "yesno",
+  "name": "Yesno",
+  "status": "draft",
+  "publisher": "D4L data4life gGmbH",
+  "contact": [
+    {
+      "name": "D4L data4life gGmbH",
+      "telecom": [{ "system": "url", "value": "https://www.data4life.care" }]
+    }
+  ],
+  "description": "Yes/No",
+  "immutable": false,
+  "compose": {
+    "include": [
+      {
+        "system": "http://loinc.org",
+        "concept": [{ "code": "LA33-6" }, { "code": "LA32-8" }]
+      }
+    ]
+  },
+  "expansion": {
+    "identifier": "urn:uuid:59d58958-9786-45e5-8903-cbbc54ecaa4f",
+    "timestamp": "2020-06-09T11:14:54.272Z",
+    "contains": [
+      { "system": "http://loinc.org", "code": "LA33-6", "display": "Yes" },
+      { "system": "http://loinc.org", "code": "LA32-8", "display": "No" }
+    ]
+  }
+}

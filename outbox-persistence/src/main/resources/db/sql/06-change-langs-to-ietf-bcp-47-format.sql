@@ -1,0 +1,1 @@
+UPDATE cases SET lang = 'en-US' WHERE lang = 'en_US';

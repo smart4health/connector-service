@@ -1,0 +1,38 @@
+{
+  "resourceType": "CodeSystem",
+  "url": "http://fhir.smart4health.eu/CodeSystem/s4h-encounter-type",
+  "name": "S4hEncounterType",
+  "status": "draft",
+  "publisher": "D4L data4life gGmbH",
+  "contact": [
+    {
+      "name": "D4L data4life gGmbH",
+      "telecom": [{ "system": "url", "value": "https://www.data4life.care" }]
+    }
+  ],
+  "description": "Code system for encounter types specific to the use cases of the Smart4Health project",
+  "copyright": "D4L data4life gGmbH,",
+  "content": "complete",
+  "concept": [
+    {
+      "code": "back-pain-treatment",
+      "display": "Back pain treatment",
+      "designation": [
+        {
+          "language": "de",
+          "value": "Behandlung von Rückenschmerzen"
+        }
+      ]
+    },
+    {
+      "code": "back-pain-prevention",
+      "display": "Back pain prevention",
+      "designation": [
+        {
+          "language": "de",
+          "value": "Prävention von Rückenschmerzen"
+        }
+      ]
+    }
+  ]
+}

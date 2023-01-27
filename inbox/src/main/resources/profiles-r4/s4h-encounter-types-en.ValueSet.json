@@ -1,0 +1,48 @@
+{
+  "resourceType": "ValueSet",
+  "language": "en",
+  "url": "http://fhir.smart4health.eu/ValueSet/s4h-encouter-type-set",
+  "version": "0.1.0",
+  "id": "S4hEncounterTypeSet",
+  "name": "S4H encounter type set",
+  "title": "S4H encounter type set",
+  "status": "draft",
+  "date": "2020-11-10",
+  "publisher": "D4L data4life gGmbH",
+  "contact": [
+    {
+      "name": "D4L data4life gGmbH",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://www.data4life.care"
+        }
+      ]
+    }
+  ],
+  "description": "Encounter types specific to the use cases of the Smart4Health project",
+  "copyright": "D4L data4life gGmbH,",
+  "compose": {
+    "include": [
+      {
+        "system": "http://fhir.smart4health.eu/CodeSystem/s4h-encounter-type"
+      }
+    ]
+  },
+  "expansion": {
+    "identifier": "urn:uuid:1f503a0a-as5d-406e-9bfa-43e78a25fe97",
+    "timestamp": "2020-11-10T12:08:51.687Z",
+    "contains": [
+      {
+        "system": "http://fhir.smart4health.eu/CodeSystem/s4h-encounter-type",
+        "code": "back-pain-treatment",
+        "display": "Back pain treatment"
+      },
+      {
+        "system": "http://fhir.smart4health.eu/CodeSystem/s4h-encounter-type",
+        "code": "back-pain-prevention",
+        "display": "Back pain prevention"
+      }
+    ]
+  }
+}

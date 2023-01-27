@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Check PIN</title>
+    <link rel="stylesheet" href="/frontend/base.css">
+    <link rel="stylesheet" href="/frontend/pin-check.css">
+</head>
+
+<body>
+    <form action="#" th:action="@{/frontend/pin-check}" id="pin-check-form" th:object="${checkPin}" method="post">
+        <div id="pin-check">
+            <div class="form-section" id="input-container">
+                <div id="pin-input-container">
+                    <input type="text" th:field="*{pin}" name="pin" id="pin-input" />
+                </div>
+                <div>
+                    <label th:for="pin-input" th:text="#{pin_check.enter_pin}"></label>
+                </div>
+            </div>
+
+            <div class="form-section" id="pin-not-received">
+                <a href="#" th:href="@{/frontend/pairing(token=*{token},resend=true,lang=*{lang})}" th:text="#{pin_check.resend}"></a>
+            </div>
+
+            <div th:if="${pinError}" class="form-section">
+                <p th:text="#{pin_check.invalid_pin_error}"></p>
+            </div>
+            <div th:if="${tokenError}" class="form-section">
+                <p th:text="#{pin_check.invalid_token_error}"></p>
+            </div>
+
+            <div th:if="${resend}" class="form-section" id="resend-text">
+                <p th:text="#{pin_check.resent}"></p>
+            </div>
+
+            <input type="hidden" id="token" name="token" th:value="*{token}">
+            <input type="hidden" id="lang" name="lang" th:value="*{lang}">
+            <div id="submit">
+                <button type="submit" class="cta-background" th:text="#{pin_check.confirm}"></button>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>

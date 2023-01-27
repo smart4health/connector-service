@@ -1,0 +1,66 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: Healthmetrix GmbH
+      comment: Sets up the table for inbox cases
+      changes:
+        - sqlFile:
+            path: db/sql/01-create-cases.sql
+  - changeSet:
+      id: 2
+      author: Healthmetrix GmbH
+      comment: Sets up the table for the refresh tokens fetched from D4L
+      changes:
+        - sqlFile:
+            path: db/sql/02-create-refresh-tokens.sql
+  - changeSet:
+      id: 3
+      author: Healthmetrix GmbH
+      comment: Sets up the table for the common keys fetched from D4L
+      changes:
+        - sqlFile:
+            path: db/sql/03-create-common-keys.sql
+  - changeSet:
+      id: 4
+      author: Healthmetrix GmbH
+      comment: Sets up the table for the cached document references from the HIS
+      changes:
+        - sqlFile:
+            path: db/sql/04-create-document-references.sql
+
+  - changeSet:
+      id: 5
+      author: Healthmetrix GmbH
+      comment: Removes table of common keys from old connector flow
+      changes:
+        - sqlFile:
+            path: db/sql/05-drop-common-keys.sql
+  - changeSet:
+      id: 6
+      author: Healthmetrix GmbH
+      comment: Sets up the table to track upload attempts
+      changes:
+        - sqlFile:
+            path: db/sql/06-create-upload-attempt-table.sql
+  - changeSet:
+      id: 7
+      author: Healthmetrix GmbH
+      comment: Prefixes column refresh_tokens.refresh_token with 'encrypted_'
+      changes:
+        - sqlFile:
+            path: db/sql/07-add-encryption-for-refresh-token-and-document-json.sql
+  - changeSet:
+      id: 8
+      author: Healthmetrix GmbH
+      comment: Renames the document_references table to reflect the variety of resources it can store
+      changes:
+        - sqlFile:
+            path: db/sql/08-rename-document-reference-to-domain-resource.sql
+
+  - changeSet:
+      id: 9
+      author: Healthmetrix GmbH
+      comment: Add a fetched_at date to refresh tokens
+      changes:
+        - sqlFile:
+            path: db/sql/09-add-fetched-at-to-refresh-token.sql

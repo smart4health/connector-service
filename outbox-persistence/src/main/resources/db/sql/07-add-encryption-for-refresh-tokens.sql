@@ -1,0 +1,1 @@
+ALTER TABLE refresh_tokens RENAME COLUMN refresh_token TO encrypted_refresh_token;

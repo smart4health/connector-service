@@ -1,0 +1,19 @@
+@font-face {
+    font-family: Lato-Regular;
+    src: url(/frontend/Lato-Regular.ttf);
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    width: 100%;
+}
+
+body {
+    font-family: 'Lato-Regular', sans-serif;
+}
+
+/* Background colors */
+.cta-background {
+    background: #F99133;
+}

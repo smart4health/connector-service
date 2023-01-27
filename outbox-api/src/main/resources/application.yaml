@@ -1,0 +1,101 @@
+server.error.path: /error
+
+spring:
+  datasource:
+    url: # empty
+    username: # empty
+    password: # empty
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    generate-ddl: false
+    hibernate.ddl-auto: validate
+
+  liquibase:
+    change-log: classpath:db/changelog.yaml
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+  endpoint:
+    health:
+      show-details: always
+      show-components: always
+      status.http-mapping.unknown: 503
+
+oauth:
+  host: http://localhost/oauth/
+  paths:
+    authorization: /authorize
+    refresh-token: /upc/token
+
+contacts:
+  support-email: "dev@healthmetrix.com"
+
+default-locale: de-DE
+
+invitation-mail:
+  src-address: noreply@healthmetrix.com
+  src-name: Smart4Health
+  subject: Smart4Health Registration
+  registration-url: http://localhost/register
+  # Email Templates for MedX. Hospital Templates are overridden in the ansible deployment files
+  templates:
+    de: 1306260 # Hospital 2034492
+    en: 1306262 # Hospital 2034494
+    it: 3910838 # Hospital 3930309
+    nl: 3910834 # Hospital 3930300
+    pt: 3093980 # Hospital 3930298
+
+portal:
+  host: http://localhost:4000
+  paths:
+    invitation-page: /start.html
+    pairing-success: /success.html
+    error: /error.html
+
+sms:
+  src-name: S4H
+  templates:
+    en-US: "Your PIN is %s. It expires in 5 minutes."
+    de-DE: "Ihre PIN ist %s. Sie laeuft in 5 Minuten ab."
+    pt-PT: "O seu código é %s e tem a validade de 5 minutos."
+    nl-NL: "Uw PIN is %s. Hij vervalt over 5 minuten."
+    it-IT: "Il tuo PIN è %s. Scade tra 5 minuti."
+
+totp:
+  timeframe:
+    duration: 30s
+    num: 10
+
+info.image-tag: "none" # override in deployment
+
+---
+spring.config.activate.on-profile: lesshealth
+
+management.endpoints.web.exposure.include: health
+
+---
+spring:
+  config:
+    activate:
+      on-profile: postgres
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/outbox
+    username: outbox
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL95Dialect
+
+---
+spring:
+  config:
+    activate:
+      on-profile: jsonlog
+  main.banner-mode: off
+
+---

@@ -1,0 +1,89 @@
+{
+  "resourceType": "ValueSet",
+  "language": "en",
+  "url": "http://fhir.smart4health.eu/ValueSet/s4h-backpain-pre-training-condition",
+  "version": "0.0.1",
+  "id": "s4h-backpain-pre-training-condition",
+  "name": "s4h-backpain-pre-training-condition",
+  "title": "Smart4Health Pre Training Condition",
+  "status": "draft",
+  "experimental": true,
+  "date": "2020-07-01",
+  "publisher": "D4L/ITTM",
+  "purpose": "The purpose of this valueset is to document the observed condition in which a training will be started.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://code.system",
+        "concept": [
+          { "code": "01" },
+          { "code": "02" },
+          { "code": "03" },
+          { "code": "04" },
+          { "code": "05" },
+          { "code": "06" },
+          { "code": "07" },
+          { "code": "08" },
+          { "code": "09" },
+          { "code": "10" }
+        ]
+      }
+    ]
+  },
+  "expansion": {
+    "identifier": "urn:uuid:1f503a0a-as5d-406e-9bfa-43e78a25fe97",
+    "timestamp": "2020-06-23T12:08:51.687Z",
+    "contains": [
+      {
+        "system": "http://code.system",
+        "code": "01",
+        "display": "Normal"
+      },
+      {
+        "system": "http://code.system",
+        "code": "02",
+        "display": "Stress at workplace"
+      },
+      {
+        "system": "http://code.system",
+        "code": "03",
+        "display": "Aching muscles"
+      },
+      {
+        "system": "http://code.system",
+        "code": "04",
+        "display": "Gardening"
+      },
+      {
+        "system": "http://code.system",
+        "code": "05",
+        "display": "Headaches"
+      },
+      {
+        "system": "http://code.system",
+        "code": "06",
+        "display": "Busy day"
+      },
+      {
+        "system": "http://code.system",
+        "code": "07",
+        "display": "Too hot outside"
+      },
+      {
+        "system": "http://code.system",
+        "code": "08",
+        "display": "Circulatory problems"
+      },
+      {
+        "system": "http://code.system",
+        "code": "09",
+        "display": "Knee pain"
+      },
+      {
+        "system": "http://code.system",
+        "code": "10",
+        "display": "Cervical pain"
+      }
+    ]
+  }
+}

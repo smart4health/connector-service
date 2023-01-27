@@ -1,0 +1,112 @@
+server:
+  port: 8081
+
+spring:
+  datasource:
+    url: # empty
+    username: # empty
+    password: # empty
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    generate-ddl: false
+    hibernate.ddl-auto: validate
+
+  liquibase:
+    change-log: classpath:db/changelog.yaml
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+      show-components: always
+      status.http-mapping.unknown: 503
+
+d4l:
+  # see D4L's Environment enum for possible values
+  # at the time of writing: sandbox, development, staging, local, production
+  environment: local
+  # Directory containing ingestion-config.json and fhir packages
+  # relative to inbox-api/ which is ugly and probably fragile, use abs. path otherwise
+  # (as it is in the Dockerfile)
+  fhir-package-directory: ../fhir-package
+
+logging.level.okhttp3: WARN
+
+oauth:
+  host: http://localhosts/oauth
+  paths:
+    access-token: /upc/token
+
+outbox:
+  host: http://localhost:8080/
+  paths:
+    add-case: /v1/internal/cases/%s
+    delete-refresh-tokens: /v1/internal/pairing/refreshtokens
+    get-refresh-tokens: /v1/internal/pairing/refreshtokens
+    simple-health-check: /v1/internal/health
+
+clean-cache:
+  max-lifetime: PT720H # 30 days
+
+sync:
+  # annoyingly enough, does not accept durations formatted like "10s"
+  initial-delay: PT10S
+  fixed-rate: PT10S
+  refresh-after: PT168H # 7 days
+
+upload:
+  initial-delay: PT15S
+  fixed-rate: PT10S
+  min-rate: PT24H
+
+renewal.backoff:
+    max-rate: PT10S
+    min-rate: PT24H
+
+query:
+  bulk-limit: 200
+  sql-page-size: 1000
+
+springdoc.swagger-ui.enabled: false
+
+info.image-tag: "none" # override in deployment
+
+---
+spring.config.activate.on-profile: lesshealth
+
+management.endpoints.web.exposure.include: health
+
+---
+spring:
+  config:
+    activate:
+      on-profile: postgres
+
+  datasource:
+    url: jdbc:postgresql://localhost:2345/inbox
+    username: inbox
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL95Dialect
+
+---
+spring:
+  config:
+    activate:
+      on-profile: jsonlog
+  main.banner-mode: off
+
+---
+spring.config.activate.on-profile: swagger
+
+springdoc:
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui/docs.html
+
+---

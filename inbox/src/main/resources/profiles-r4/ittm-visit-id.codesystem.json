@@ -1,0 +1,16 @@
+{
+  "resourceType": "CodeSystem",
+  "url": "http://fhir.smart4health.eu/CodeSystem/ittm-visit-id",
+  "name": "IttmVisitIdCodeSystem",
+  "status": "draft",
+  "publisher": "D4L data4life gGmbH",
+  "contact": [
+    {
+      "name": "D4L data4life gGmbH",
+      "telecom": [{ "system": "url", "value": "https://www.data4life.care" }]
+    }
+  ],
+  "description": "Code system for the visit IDs used by ITTM",
+  "copyright": "D4L data4life gGmbH,",
+  "content": "not-present"
+}

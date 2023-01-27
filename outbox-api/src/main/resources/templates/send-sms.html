@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Send SMS</title>
+    <link rel="stylesheet" href="/frontend/base.css">
+    <link rel="stylesheet" href="/frontend/send-sms.css">
+</head>
+
+<body>
+    <div id="send-sms-container">
+        <div id="text-container">
+            <p th:text="#{send_sms.number_confirmation(${phoneLast4})}"></p>
+        </div>
+        <div id="continue-container" class="cta-background">
+            <a id="continue-link" th:href="@{/frontend/pairing(token=${token},lang=${lang})}">
+                <span id="continue-text" th:text="#{send_sms.continue}"></span>
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>

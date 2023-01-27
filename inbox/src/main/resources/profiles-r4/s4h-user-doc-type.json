@@ -1,0 +1,168 @@
+{
+  "resourceType": "CodeSystem",
+  "url": "http://fhir.smart4health.eu/CodeSystem/s4h-user-doc-type",
+  "name": "S4hPatientDocType",
+  "status": "draft",
+  "publisher": "D4L data4life gGmbH",
+  "contact": [
+    {
+      "name": "D4L data4life gGmbH",
+      "telecom": [{ "system": "url", "value": "https://www.data4life.care" }]
+    }
+  ],
+  "description": "Code system for document classification by users (patients), as part of the Smart4Health use cases",
+  "copyright": "D4L data4life gGmbH,",
+  "content": "complete",
+  "concept": [
+    {
+      "code": "billing",
+      "display": "Billing",
+      "designation": [
+        {
+          "language": "de",
+          "value": "Rechnung"
+        }
+      ]
+    },
+    {
+      "code": "referral",
+      "display": "Referral",
+      "designation": [
+        {
+          "language": "de",
+          "value": "Überweisung"
+        }
+      ]
+    },
+    {
+      "code": "ct-diagnostics",
+      "display": "CT diagnostics",
+      "designation": [
+        {
+          "language": "de",
+          "value": "CT-Diagnostik"
+        }
+      ]
+    },
+    {
+      "code": "x-ray",
+      "display": "X-ray image",
+      "designation": [
+        {
+          "language": "de",
+          "value": "Röntgenbild"
+        }
+      ]
+    },
+    {
+      "code": "mri",
+      "display": "MRI",
+      "designation": [
+        {
+          "language": "de",
+          "value": "MRT"
+        }
+      ]
+    },
+    {
+      "code": "lab-report",
+      "display": "Laboratory report",
+      "designation": [
+        {
+          "language": "de",
+          "value": "Laborbefund"
+        }
+      ]
+    },
+    {
+      "code": "blood-count",
+      "display": "Blood count",
+      "designation": [
+        {
+          "language": "de",
+          "value": "Blutbild"
+        }
+      ]
+    },
+    {
+      "code": "ecg",
+      "display": "Electrocardiogram (ECG)",
+      "designation": [
+        {
+          "language": "de",
+          "value": "Elektrokardiogramm (EKG)"
+        }
+      ]
+    },
+    {
+      "code": "operative-report",
+      "display": "Operative report",
+      "designation": [
+        {
+          "language": "de",
+          "value": "Operationsbericht"
+        }
+      ]
+    },
+    {
+      "code": "allergy-test",
+      "display": "Allergy test",
+      "designation": [
+        {
+          "language": "de",
+          "value": "Allergietest"
+        }
+      ]
+    },
+    {
+      "code": "pulmonary-function-report",
+      "display": "Pulmonary function report",
+      "designation": [
+        {
+          "language": "de",
+          "value": "Lungenfunktionsprüfung"
+        }
+      ]
+    },
+    {
+      "code": "doctors-letter",
+      "display": "Doctor's letter",
+      "designation": [
+        {
+          "language": "de",
+          "value": "Arztbrief"
+        }
+      ]
+    },
+    {
+      "code": "general-report",
+      "display": "General report",
+      "designation": [
+        {
+          "language": "de",
+          "value": "Allgemeiner Befund"
+        }
+      ]
+    },
+    {
+      "code": "performance-diagnostics",
+      "display": "Performance diagnostics",
+      "designation": [
+        {
+          "language": "de",
+          "value": "Leistungsdiagnostik"
+        }
+      ]
+    },
+    {
+      "code": "other",
+      "display": "Other",
+      "designation": [
+        {
+          "language": "de",
+          "value": "Sonstiges"
+        }
+      ]
+    }
+  ]
+}

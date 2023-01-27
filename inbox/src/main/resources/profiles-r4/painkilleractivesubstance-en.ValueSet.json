@@ -1,0 +1,47 @@
+{
+  "resourceType": "ValueSet",
+  "language": "en",
+  "url": "http://fhir.smart4health.eu/ValueSet/painkilleractivesubstance",
+  "version": "0.0.1",
+  "id": "painkilleractivesubstance",
+  "name": "PainkillerActiveSubstance",
+  "status": "draft",
+  "experimental": true,
+  "publisher": "D4L data4life gGmbH",
+  "contact": [
+    {
+      "name": "D4L data4life gGmbH",
+      "telecom": [{ "system": "url", "value": "https://www.data4life.care" }]
+    }
+  ],
+  "immutable": false,
+  "compose": {
+    "include": [
+      {
+        "system": "http://code.system",
+        "concept": [{ "code": "1" }, { "code": "2" }, { "code": "3" }]
+      }
+    ]
+  },
+  "expansion": {
+    "identifier": "urn:uuid:1f503a0a-as5d-406e-9bfa-43e78a25fe97",
+    "timestamp": "2020-06-23T12:08:51.687Z",
+    "contains": [
+      {
+        "system": "http://code.system",
+        "code": "1",
+        "display": "Substance 1"
+      },
+      {
+        "system": "http://code.system",
+        "code": "2",
+        "display": "Substance 2"
+      },
+      {
+        "system": "http://code.system",
+        "code": "3",
+        "display": "Substance 3"
+      }
+    ]
+  }
+}

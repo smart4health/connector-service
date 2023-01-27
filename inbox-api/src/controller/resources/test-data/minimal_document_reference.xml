@@ -1,0 +1,44 @@
+<DocumentReference xmlns="http://hl7.org/fhir">
+
+    <contained>
+        <Organization>
+            <id value="f3436077-5bbd-41cb-9a21-3b7f5e755d1f"/>
+            <name value="Example Hospital"/>
+            <type>
+                <coding>
+                    <system value="http://hl7.org/fhir/organization-type"/>
+                    <code value="prov"/>
+                    <display value="Healthcare Provider"/>
+                </coding>
+            </type>
+        </Organization>
+    </contained>
+
+    <status value="current"/>
+
+    <type>
+        <coding>
+            <system value="http://loinc.org"/>
+            <code value="34105-7"/>
+            <display value="Hospital Discharge Summary"/>
+        </coding>
+    </type>
+
+    <description value="Some xml document"/>
+
+    <author>
+        <reference value="#f3436077-5bbd-41cb-9a21-3b7f5e755d1f"/>
+    </author>
+
+    <indexed value="2019-10-23T11:32:23Z"/>
+
+    <content>
+        <attachment>
+            <contentType value="application/pdf"/>
+            <data value="JVBERi0xLjINJeLjz9MNCjMgMCBvYmoNPDwgDS9MaW5lYXJpemVkIDEgDS9PIDUgDS9IIFsgNzYwIDE1NyBdIA0vTCAzOTA4IA0vRSAzNjU4IA0vTiAxIA0vVCAzNzMxIA0"/>
+            <size value="3908"/>
+            <hash value="7999aa92832f0367193807ac1fdab028ea61ff5c"/>
+        </attachment>
+    </content>
+
+</DocumentReference>

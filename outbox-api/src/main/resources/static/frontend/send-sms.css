@@ -1,0 +1,33 @@
+#send-sms-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+}
+
+#text-container {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+#continue-container {
+    padding: 10px;
+    border-radius: 5px;
+    width: 200px;
+    text-align: center;
+}
+
+#continue-link {
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 550px) {
+    #continue-container {
+        align-self: center;
+    }
+}
