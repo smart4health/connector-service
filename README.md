@@ -128,3 +128,6 @@ Features are implemented as spring profiles as well, but should only control one
 
 Currently used profiles for production:
 email,phonevalidator,sms,oauth,secrets,postgres
+
+## Connector Portal
+The Frontend communicating with the outbox is implemented here: https://github.com/smart4health/connector-portal
