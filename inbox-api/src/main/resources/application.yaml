@@ -63,6 +63,7 @@ upload:
   initial-delay: PT15S
   fixed-rate: PT10S
   min-rate: PT24H
+  batch-limit: 50
 
 renewal.backoff:
     max-rate: PT10S

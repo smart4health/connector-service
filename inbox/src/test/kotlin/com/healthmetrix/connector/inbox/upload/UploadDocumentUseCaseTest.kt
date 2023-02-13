@@ -64,6 +64,7 @@ class UploadDocumentUseCaseTest {
         accessTokenFetcher,
         documentUploader,
         decryptResourceUseCase,
+        50,
     )
 
     @Test

@@ -1,5 +1,6 @@
 package com.healthmetrix.connector.inbox.persistence.domainresources
 
+import org.springframework.data.domain.Pageable
 import org.springframework.data.jpa.repository.Modifying
 import org.springframework.data.jpa.repository.Query
 import org.springframework.data.repository.CrudRepository
@@ -14,7 +15,7 @@ interface DomainResourceCrudRepository : CrudRepository<DomainResourceEntity, UU
             "FROM DomainResourceEntity d, CaseEntity c, RefreshTokenEntity r " +
             "WHERE d.externalCaseId = c.externalCaseId AND c.internalCaseId = r.internalCaseId",
     )
-    fun getResourcesWithRefreshTokens(): List<UploadableResourceProjection>
+    fun getResourcesWithRefreshTokens(pageable: Pageable): List<UploadableResourceProjection>
 
     @Query("SELECT d.internalResourceId FROM DomainResourceEntity d WHERE d.insertedAt < :timestamp")
     fun getInternalResourceIdsInsertedBeforeTimestamp(timestamp: Timestamp): List<UUID>
@@ -35,9 +36,11 @@ class DomainResourceRepository(
             .let(domainResourceCrudRepository::save)
             .let(entityMapper::toDomain)!!
 
-    fun getResourcesWithRefreshTokens(): List<UploadableResource> =
-        domainResourceCrudRepository.getResourcesWithRefreshTokens()
+    fun getResourcesWithRefreshTokens(limit: Int = 50): List<UploadableResource> {
+        val pageable = Pageable.ofSize(limit)
+        return domainResourceCrudRepository.getResourcesWithRefreshTokens(pageable)
             .mapNotNull(projectionMapper::toDomain)
+    }
 
     fun deleteById(internalResourceId: UUID) =
         domainResourceCrudRepository.deleteById(internalResourceId)

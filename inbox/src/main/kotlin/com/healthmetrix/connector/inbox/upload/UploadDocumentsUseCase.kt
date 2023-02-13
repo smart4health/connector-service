@@ -12,6 +12,7 @@ import com.healthmetrix.connector.inbox.upload.AccessTokenMapper.ResourceWithAcc
 import com.healthmetrix.connector.inbox.upload.UploadDocumentsUseCase.GroupedCaseInfo
 import com.healthmetrix.connector.inbox.upload.UploadDocumentsUseCase.GroupedResource
 import net.logstash.logback.argument.StructuredArguments.kv
+import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Component
 import java.sql.Timestamp
 import java.time.Instant
@@ -28,6 +29,8 @@ class UploadDocumentsUseCase(
     private val accessTokenMapper: AccessTokenFetcher,
     private val resourceUploader: ResourceUploader,
     private val decryptResourceUseCase: DecryptResourceUseCase,
+    @Value("\${upload.batch-limit}")
+    private val batchLimit: Int,
 ) {
 
     /**
@@ -38,9 +41,17 @@ class UploadDocumentsUseCase(
      * 5. load and decrypt the resource one at a time, and upload
      */
     operator fun invoke() = domainResourceRepository
-        .getResourcesWithRefreshTokens()
+        .getResourcesWithRefreshTokens(batchLimit)
         .filter(backoffFilter)
-        .also { if (it.isNotEmpty()) logger.info("uploadResources {}", kv("toUpload", it.size)) }
+        .also {
+            if (it.isNotEmpty()) {
+                logger.info(
+                    "uploadResources {} {}",
+                    kv("toUpload", it.size),
+                    kv("limit", batchLimit),
+                )
+            }
+        }
         .groupBy(::GroupedCaseInfo, ::GroupedResource)
         .flatMap(accessTokenMapper)
         .forEach { resourceWithAccessToken ->

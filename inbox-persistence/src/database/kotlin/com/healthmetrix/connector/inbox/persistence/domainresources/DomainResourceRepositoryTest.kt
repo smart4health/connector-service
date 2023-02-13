@@ -192,4 +192,62 @@ class DomainResourceRepositoryTest {
             assertThat(it.size).isEqualTo(2)
         }
     }
+
+    @Test
+    fun `query limits are obeyed`() {
+        val internalCaseId = UUID.randomUUID()
+        val internalCaseId2 = UUID.randomUUID()
+
+        caseRepository.save(
+            CaseEntity(
+                internalCaseId,
+                "externalCaseId1",
+                encryptedPrivateKey,
+            ),
+        )
+        caseRepository.save(
+            CaseEntity(
+                internalCaseId2,
+                "externalCaseId2",
+                encryptedPrivateKey,
+            ),
+        )
+
+        refreshTokenRepository.saveAll(
+            listOf(
+                RefreshToken(
+                    internalCaseId,
+                    "refreshToken",
+                    null,
+                ),
+                RefreshToken(
+                    internalCaseId2,
+                    "refreshToken2",
+                    null,
+                ),
+            ),
+        )
+
+        domainResourceRepository.save(
+            DomainResource(
+                UUID.randomUUID(),
+                "externalCaseId1",
+                Timestamp.from(Instant.now()),
+                "document",
+            ),
+        )
+
+        domainResourceRepository.save(
+            DomainResource(
+                UUID.randomUUID(),
+                "externalCaseId2",
+                Timestamp.from(Instant.now()),
+                "document",
+            ),
+        )
+
+        val toUpload = domainResourceRepository.getResourcesWithRefreshTokens(1)
+
+        assertThat(toUpload.size).isEqualTo(1)
+    }
 }
