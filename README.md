@@ -1,5 +1,13 @@
 # Smart4Health Connector
 
+## Acknowledgements
+
+<img src="./img/eu.jpg" align="left" alt="European Flag" width="60">
+
+This project has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No 826117.
+
+## About
+
 The Smart4Health Connector is an application that will connect a patient's hospital
 data to an eHR of his or her choice. In order to fulfill this while guaranteeing maximum data privacy and security
 concerns, the application consists of two components split up on the hospital's internal network and the DMZ.
