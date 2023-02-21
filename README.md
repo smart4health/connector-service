@@ -139,3 +139,32 @@ email,phonevalidator,sms,oauth,secrets,postgres
 
 ## Connector Portal
 The Frontend communicating with the outbox is implemented here: https://github.com/smart4health/connector-portal
+
+## Code Stats
+Generated with [tokei](https://github.com/XAMPPRocky/tokei)
+
+```
+===============================================================================
+ Language            Files        Lines         Code     Comments       Blanks
+===============================================================================
+ Batch                   1           92           71            0           21
+ CSS                     3          104           88            1           15
+ Dockerfile              1           15           10            0            5
+ HTML                    4           93           83            0           10
+ JavaScript              3           55           36           13            6
+ JSON                   39        23530        23530            0            0
+ Kotlin                205        12781        10541          264         1976
+ Shell                   1          244          103          116           25
+ SQL                    16           69           69            0            0
+ Plain Text              3           18            0           18            0
+ TOML                    1          102           80            1           21
+ XML                     6          160          135            0           25
+ YAML                    4          330          279            7           44
+-------------------------------------------------------------------------------
+ Markdown                2          349            0          232          117
+ |- Shell                1           10           10            0            0
+ (Total)                            359           10          232          117
+===============================================================================
+ Total                 289        37942        35025          652         2265
+===============================================================================
+```
